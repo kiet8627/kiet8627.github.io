@@ -656,6 +656,24 @@ section {
   padding: 0;
 }
 
+div.scroll-container {
+  background-color: #333;
+  overflow: auto;
+  white-space: nowrap;
+  padding: 10px;
+}
+
+div.scroll-container img {
+  padding: 10px;
+  height: 300px;
+}
+
+div.scroll-container video {
+  padding: 10px;
+  vertical-align: middle;
+  height: 300px;
+}
+
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
