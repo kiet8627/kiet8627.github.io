@@ -9,6 +9,19 @@
 
   <link href="assets/img/icon.png" rel="icon" />
 
+  <script>
+    (function () {
+      let savedTheme = null;
+      try {
+        savedTheme = localStorage.getItem("theme");
+      } catch (error) {
+        savedTheme = null;
+      }
+      const preferredTheme = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", savedTheme || preferredTheme);
+    })();
+  </script>
+
   <!-- Google Fonts -->
   <link
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
@@ -37,10 +50,10 @@
           <a href="https://github.com/kiet8627" target="_blank" class="github"><i class="bx bxl-github"></i></a>
           <a href="https://www.linkedin.com/in/kietphan86/" target="_blank" class="linkedin"><i
               class="bx bxl-linkedin"></i></a>
-          <a href="https://www.instagram.com/kietr.phn86/" target="_blank" class="instagram"><i
+          <!-- <a href="https://www.instagram.com/kietr.phn86/" target="_blank" class="instagram"><i
               class="bx bxl-instagram"></i></a>
           <a href="https://www.facebook.com/kietphan86/" target="_blank" class="facebook"><i
-              class="bx bxl-facebook"></i></a>
+              class="bx bxl-facebook"></i></a> -->
         </div>
       </div>
 
@@ -53,10 +66,20 @@
             <a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a>
           </li>
           <li>
+            <a href="#research-projects" class="nav-link scrollto"><i class="bx bx-bulb"></i>
+              <span>Research & Projects</span></a>
+          </li>
+          <li>
             <a href="#achievements" class="nav-link scrollto"><i class="bx bx-trophy"></i> <span>Achievements</span></a>
           </li>
           <li>
             <a href="#portfolio" class="nav-link scrollto"><i class="bx bx-photo-album"></i> <span>Activities</span></a>
+          </li>
+          <li>
+            <button class="theme-toggle" type="button" aria-label="Switch to light mode" aria-pressed="false">
+              <i class="bx bx-sun"></i>
+              <span>Light mode</span>
+            </button>
           </li>
         </ul>
       </nav>
@@ -75,12 +98,21 @@
                   <span>About</span></a>
               </li>
               <li class="nav-item">
+                <a href="#research-projects" class="nav-link scrollto"><i class="bx bx-bulb"></i>
+                  <span>Research & Projects</span></a>
+              </li>
+              <li class="nav-item">
                 <a href="#achievements" class="nav-link scrollto"><i class="bx bx-trophy"></i>
                   <span>Achievements</span></a>
               </li>
               <li class="nav-item">
                 <a href="#portfolio" class="nav-link scrollto"><i class="bx bx-photo-album"></i>
                   <span>Activities</span></a>
+              </li>
+              <li class="nav-item">
+                <button class="theme-toggle" type="button" aria-label="Switch to light mode" aria-pressed="false">
+                  <i class="bx bx-sun"></i>
+                </button>
               </li>
             </ul>
           </div>
@@ -108,10 +140,10 @@
           <a href="https://github.com/kiet8627" target="_blank" class="github"><i class="bx bxl-github"></i></a>
           <a href="https://www.linkedin.com/in/kietphan86/" target="_blank" class="linkedin"><i
               class="bx bxl-linkedin"></i></a>
-          <a href="https://www.instagram.com/kietr.phn86/" target="_blank" class="instagram"><i
+          <!-- <a href="https://www.instagram.com/kietr.phn86/" target="_blank" class="instagram"><i
               class="bx bxl-instagram"></i></a>
           <a href="https://www.facebook.com/kietphan86/" target="_blank" class="facebook"><i
-              class="bx bxl-facebook"></i></a>
+              class="bx bxl-facebook"></i></a> -->
         </div>
       </div>
       <!-- <div class="col-md-6">
@@ -193,190 +225,43 @@
               programming and creating useful tools prompted me to participate in many hackathons, projects,
               and researches, which help me to improve my teamworking, problem solving, and critical thinking.
             </p>
+            <p>
+              <a class="profile-resume-button" href="assets/resume.pdf" target="_blank" rel="noopener">
+                <i class="bx bx-file"></i>
+                <span>Resume</span>
+              </a>
+            </p>
           </div>
         </div>
       </div>
     </section>
     <!-- End About Section -->
 
+    <!-- ======= Research & Projects Section ======= -->
+    <section id="research-projects" class="research-projects section-bg">
+      <div class="container">
+        <div class="section-title">
+          <h2>Research & Projects</h2>
+          <p>
+            Selected research work, robotics, and technical projects.
+          </p>
+        </div>
+
+        <div class="row research-projects-container" id="research-projects-container" data-aos="fade-up"></div>
+      </div>
+    </section>
+    <!-- End Research & Projects Section -->
+
     <!-- ======= Achievements Section ======= -->
     <section id="achievements" class="achievements">
       <div class="container">
         <div class="section-title">
-          <h2>Achievements</h2>
-          <p>
-            My experiences from taking part in a myriad of
-            competitions have been invaluable and I was able to
-            learn and improve on my weaknesses every time.
-          </p>
+          <h2 id="achievements-title">Achievements</h2>
+          <p id="achievements-introduction"></p>
         </div>
 
-        <div class="row">
-          <div class="col-md-6" data-aos="fade-up">
-            <h3 class="achievements-title">Olympiads</h3>
-
-            <div class="achievements-item">
-              <h4>Singapore Mathematical Olympiad</h4>
-              <h5>2024</h5>
-              <p>
-                <em>Competed in
-                  <span>open</span> category</em>
-              </p>
-              <ul>
-                <li>Silver Medal</li>
-              </ul>
-              <h5>2023</h5>
-              <p>
-                <em>Competed in
-                  <span>senior</span> category</em>
-              </p>
-              <ul>
-                <li>Gold Medal</li>
-              </ul>
-            </div>
-
-            <div class="achievements-item">
-              <h4>
-                Singapore National Olympiad in Informatics
-              </h4>
-              <h5>2024</h5>
-              <ul>
-                <li>Silver Medal</li>
-              </ul>
-              <h5>2023</h5>
-              <ul>
-                <li>Silver Medal</li>
-              </ul>
-            </div>
-
-            <div class="achievements-item">
-              <h4>Singapore Junior Physics Olympiad</h4>
-              <h5>2024</h5>
-              <ul>
-                <li>Bronze Medal</li>
-              </ul>
-            </div>
-
-            <h3 class="achievements-title">Sports</h3>
-            <div class="achievements-item">
-              <h4>FOOTBALL</h4>
-              <h5>2024</h5>
-              <ul>
-                <li>
-                  2<sup>nd</sup> in the Football
-                  Competition of Fuhua Secondary School,
-                  Singapore
-                </li>
-              </ul>
-              <h5>2023</h5>
-              <ul>
-                <li>
-                  1<sup>st</sup> in the Football
-                  Competition of Fuhua Secondary School,
-                  Singapore
-                </li>
-              </ul>
-            </div>
-            <div class="achievements-item">
-              <h4>TABLE TENNIS</h4>
-              <h5>2020</h5>
-              <ul>
-                <li>
-                  2<sup>nd</sup> in the Table Tennis
-                  Competition of Lien Chieu District,
-                  Danang, Vietnam
-                </li>
-                <li>
-                  3<sup>rd</sup> in the Table Tennis
-                  Competition of Nguyen Luong Bang
-                  Secondary School, Danang, Vietnam
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <h3 class="achievements-title">Scholarships</h3>
-            <div class="achievements-item">
-              <h4>ASEAN SCHOLARSHIP</h4>
-              <h5>2023</h5>
-            </div>
-            <div class="achievements-item">
-              <h4>FPT SOFTWARE COMPUTER TALENTS CLUB</h4>
-              <h5>2020 - 2023</h5>
-            </div>
-
-            <h3 class="achievements-title">Robotics</h3>
-            <div class="achievements-item">
-              <h4>National Robotics Competition</h4>
-              <h5>2023</h5>
-              <ul>
-                <li>
-                  2<sup>nd</sup> in Best Engineering
-                  Design Award
-                </li>
-              </ul>
-            </div>
-
-            <h3 class="achievements-title">Projects</h3>
-            <div class="achievements-item">
-              <h4>Danang Science and Engineering Fair</h4>
-              <h5>Sep 2021 - Mar 2022</h5>
-              <p>
-                <em>
-                  Researched related materials about theories of Deep Learning, Mobile App
-                  Development, Cloud, Server, API. Collected data about various types of
-                  typical and popular corn diseases. Trained models that can recognize corn
-                  diseases via images. Designed an app to take photos of corn leaves and detect
-                  health issues or diseases. Wrote a scientific report. Presented and
-                  defended the research topic.
-                </em>
-              </p>
-              <ul>
-                <li>1<sup>st</sup> Place</li>
-              </ul>
-            </div>
-
-            <div class="achievements-item">
-              <h4>
-                Arduino Contest - FPT SOFTWARE COMPUTER
-                TALENTS CLUB
-              </h4>
-              <h5>Nov 2021 - Feb 2022</h5>
-              <p>
-                <em>
-                  Created a weather station that can send temperature, pressure, and sky
-                  brightness to the website that the owner can monitor. Implemented weather station
-                  using ESP32 microcontroller, LDR, BMP180 sensor, LED, and buzzer. Used Python to
-                  control the operation of the machine. Presented the research topic.
-                </em>
-              </p>
-            </div>
-
-            <div class="achievements-item">
-              <h4>
-                Youth-On! Hackathon - VNUK Institute for Research and Executive Education - The
-                University of Danang
-              </h4>
-              <h5>Nov 2023 - Dec 2023</h5>
-              <p>
-                <em>
-                  Thought-to-speech conversion system for post-stroke patients and individuals
-                  with speech impairment. Leveraged Electroencephalography (EEG) technology
-                  to support post-stroke patients and individuals with speech impairment in
-                  communication. Planned to develop a compact, portable system capable of
-                  quickly translating thoughts into speech. The goal was to foster social
-                  integration for individuals with disabilities.
-                </em>
-              </p>
-              <ul>
-                <li>Honorable Mention</li>
-              </ul>
-            </div>
-          </div>
-
-          <a href="assets/resume.pdf" target="_blank"><b style="font-size: 20px;">See my full resume here!</b></a>
-        </div>
+        <!-- Achievements are rendered from assets/js/site-content.js. -->
+        <div class="row" id="achievements-container"></div>
       </div>
     </section>
     <!-- End achievements Section -->
@@ -395,128 +280,45 @@
 
         <div class="row" data-aos="fade-up">
           <div class="col-lg-12 d-flex justify-content-center">
-            <ul id="portfolio-filters">
-              <li data-filter="*" class="filter-active">
-                All
-              </li>
-              <li data-filter=".filter-project">Project</li>
-              <li data-filter=".filter-robotics">Robotics</li>
-              <li data-filter=".filter-camp">Camp</li>
-              <li data-filter=".filter-volunteer">Volunteer</li>
-            </ul>
+            <ul id="portfolio-filters"></ul>
           </div>
         </div>
 
-        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
-          <!-- Weather station -->
-          <div class="col-lg-4 col-md-6 portfolio-item filter-project">
-            <div class="portfolio-wrap">
-              <img src="assets/img/activities/weather-station/weather-station.png" class="img-fluid" alt="" />
-              <div class="portfolio-links">
-                <a href="assets/img/activities/weather-station/weather-station.png" title="More details" 
-                  data-gallery="portfolioGallery" class="portfolio-lightbox"
-                  data-glightbox="title: Weather Station; description: .project-desc1" data-desc-position="right"><i
-                    class="bx bx-info-circle"></i></a>
-                <div class="glightbox-desc project-desc1">
-                  <video class="d-none d-lg-block" width="240" height="180" controls muted >
-                    <source src="assets/img/activities/weather-station/weather-station.mp4" type="video/mp4" />
-                  </video>
-                  <p class="mt-3">
-                    Created a weather station that can send temperature, pressure, and sky brightness to the website
-                    that the owner can monitor. Implemented weather station using ESP32 microcontroller, LDR, BMP180
-                    sensor, LED, and buzzer. Used Python to control the operation of the machine. Presented the research
-                    topic.
-                  </p>
-                </div>
-                <a href="https://github.com/kiet8627/Weather-station" target="_blank" title="Source code"><i
-                    class="bx bx-code-alt"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Robotics -->
-          <div class="col-lg-4 col-md-6 portfolio-item filter-robotics">
-            <div class="portfolio-wrap">
-              <img src="assets/img/activities/robotics/img/robot.png" class="img-fluid" alt="" />
-              <div class="portfolio-links">
-                <a href="assets/img/activities/robotics/run/half-run.gif"  data-gallery="portfolioGallery"
-                  class="portfolio-lightbox" data-glightbox="title: NRC 2023; description: .robotics-desc"><i
-                    class="bx bx-info-circle"></i></a>
-                <div class="glightbox-desc robotics-desc">
-                  <p>
-                    Researched robot building and construction. Learned about robot movements, turns and algorithms.
-                    Coded programs (using LEGO Mindstorms app) for the robot to perform tasks automatically.
-                  </p>
-
-                  <div class="scroll-container">
-                    <img src="assets/img/activities/robotics/img/grab&lift.jpg" title="Grab & lift mechanism" >
-                    <img src="assets/img/activities/robotics/img/bottom-view.png" title="Bottom view of the robot" >
-                    <img src="assets/img/activities/robotics/img/CEs.png"
-                      title="New (left) and old (right) versions of construction equipment" >
-                    <img src="assets/img/activities/robotics/run/newCE.gif" title="Using new construction equipment" >
-                    <img src="assets/img/activities/robotics/cert/cert.jpg" title="Certification" >
-                  </div>
-                </div>
-
-                <a href="https://github.com/kiet8627/" target="_blank" title="Source code"><i
-                    class="bx bx-code-alt"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Kitchen -->
-          <div class="col-lg-4 col-md-6 portfolio-item filter-volunteer">
-            <div class="portfolio-wrap">
-              <img src="assets/img/activities/kitchen/volunteer.png" class="img-fluid" alt="" />
-              <div class="portfolio-links">
-                <a href="assets/img/activities/kitchen/volunteer.png" title="More details" 
-                  data-gallery="portfolioGallery" class="portfolio-lightbox"
-                  data-glightbox="title: Volunteer; description: .volunteer-desc1"><i class="bx bx-info-circle"></i></a>
-                <div class="glightbox-desc volunteer-desc1">
-                  <p>
-                    During my summer break in Vietnam, I dedicated 14 hours to volunteering in the kitchen for a
-                    charity meal service at Da Nang Psychiatric Hospital.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- First aid -->
-          <div class="col-lg-4 col-md-6 portfolio-item filter-volunteer">
-            <div class="portfolio-wrap">
-              <img src="assets/img/activities/first-aid/img/0.png" class="img-fluid" alt="" />
-              <div class="portfolio-links">
-                <a href="assets/img/activities/first-aid/first-aid-1.mp4" title="More details" 
-                  data-gallery="portfolioGallery" class="portfolio-lightbox"
-                  data-glightbox="title: Volunteer; description: .volunteer-desc2"><i class="bx bx-info-circle"></i></a>
-                <div class="glightbox-desc volunteer-desc2">
-                  <p>
-                    During my summer break in Vietnam, I dedicated 8 hours attending a first aid and
-                    drowning prevention training organized by the local Youth Union and Red Cross.
-                  </p>
-
-                  <style>
-                    
-                  </style>
-
-                  <div class="scroll-container">
-                    <video controls muted>
-                      <source src="assets/img/activities/first-aid/first-aid-2.mp4" type="video/mp4" />
-                    </video>
-                    <img src="assets/img/activities/first-aid/img/0.png" >
-                    <img src="assets/img/activities/first-aid/img/1.jpg" >
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-        </div>
+        <!-- Activities are rendered from assets/js/site-content.js. -->
+        <div class="row portfolio-container" id="activities-container" data-aos="fade-up" data-aos-delay="100"></div>
       </div>
     </section>
     <!-- End Portfolio Section -->
+
+    <div class="activity-modal" id="activity-modal" aria-hidden="true">
+      <div class="activity-modal__backdrop" data-activity-close></div>
+      <div class="activity-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="activity-modal-title">
+        <button class="activity-modal__close" type="button" aria-label="Close viewer" data-activity-close>
+          <i class="bx bx-x"></i>
+        </button>
+
+        <div class="activity-modal__media-panel">
+          <button class="activity-modal__arrow activity-modal__arrow--prev" type="button" aria-label="Previous media">
+            <i class="bx bx-chevron-left"></i>
+          </button>
+          <div class="activity-modal__media" id="activity-modal-media"></div>
+          <button class="activity-modal__arrow activity-modal__arrow--next" type="button" aria-label="Next media">
+            <i class="bx bx-chevron-right"></i>
+          </button>
+          <div class="activity-modal__counter" id="activity-modal-counter"></div>
+          <div class="activity-modal__thumbs" id="activity-modal-thumbs" aria-label="Activity media list"></div>
+        </div>
+
+        <aside class="activity-modal__content">
+          <h3 id="activity-modal-title"></h3>
+          <div class="activity-modal__description" id="activity-modal-description"></div>
+          <a class="activity-modal__link" id="activity-modal-link" href="#" target="_blank" rel="noopener">
+            <i class="bx bx-code-alt"></i>
+            <span>Open related code or link</span>
+          </a>
+        </aside>
+      </div>
+    </div>
   </main>
   <!-- End #main -->
 
@@ -535,6 +337,7 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
+  <script src="assets/js/site-content.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 
